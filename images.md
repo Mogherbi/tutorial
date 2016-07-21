@@ -64,7 +64,9 @@ end
 ```
 
 8) app/views/listings/show.html.erb
+
 - How to display different version of images
+
   ```
   <%= image_tag (@listing.avatars[0].large.url) %>
   ```
