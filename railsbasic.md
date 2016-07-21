@@ -11,7 +11,11 @@
 
 
 - `app/views/listings/new.html.erb` OR `app/views/listings/edit.html.erb`
-```<= render 'form' %>``` #form has to be partial html erb file
+
+```
+<= render 'form' %>
+```
+#form has to be partial html erb file
 
 
 - app/views/layout/application.html.erb
