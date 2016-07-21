@@ -1,17 +1,17 @@
 A) creating git branch to work on
-1) create new git branch and switch to it at the same time
+- create new git branch and switch to it at the same time
 ```
 $git checkout -b "feature/listings"
 ```
-2)
+
 ```
 $git add .
 ```
-3)
+
 ```
 $git commit -m "listing model done"
 ```
-4) create remote branch, and push my code there
+- create remote branch, and push my code there
 ```
 $git push origin feature/listings
 ```
