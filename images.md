@@ -22,7 +22,11 @@ $rails g migration add_avatars_to_listings avatars:json
 $bundle exec rake db:migrate
 ```
 
-4) app/model/listing.rb
+4)
+```$rails generate uploader avatar```
+
+- app/model/listing.rb
+
 ```
 class Listing < ActiveRecord::Base
   mount_uploaders :avatars, AvatarUploader
