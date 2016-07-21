@@ -65,6 +65,11 @@ end
   version :square do
     process :resize_to_limit => [300, 300]
   end
+  
+  def extension_whitelist
+    %w(jpg jpeg gif png)
+  end
+
 ```
 
 8) app/views/listings/show.html.erb
