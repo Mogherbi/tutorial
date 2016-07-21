@@ -9,7 +9,7 @@
 - config/routes.rb
 ```resources :listings, only: [:show, :index, ....]```
 
-- app/views/listings/new.html.erb OR app/views/listings/_form.html.erb
+- `app/views/listings/new.html.erb` OR `app/views/listings/edit.html.erb`
 ```<= render 'form' %>``` #form has to be partial html erb file
 
 - app/views/layout/application.html.erb
