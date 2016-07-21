@@ -2,13 +2,7 @@ A) creating git branch to work on
 - create new git branch and switch to it at the same time
 ```
 $git checkout -b "feature/listings"
-```
-
-```
 $git add .
-```
-
-```
 $git commit -m "listing model done"
 ```
 - create remote branch, and push my code there
@@ -28,7 +22,7 @@ $git status
 ```
 
 ```$git checkout -b "check check"```
-for eg.:
+- for eg.:
 ```
 $git pull origin feature/users
 ```
