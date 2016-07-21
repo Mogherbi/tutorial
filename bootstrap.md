@@ -25,8 +25,9 @@ gem 'bootstrap-select-rails'
 ```
 
 3) app/assets/stylesheets/application.css
-
+```
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-select";
 
+```
