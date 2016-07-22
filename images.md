@@ -48,6 +48,8 @@ end
 7) app/uploaders/avatar_uploader.rb
 ```
   include CarrierWave::MiniMagick
+  storage :file
+
   #make sure minimagick is included
 
   version :large do
@@ -79,7 +81,8 @@ end
   ```
   <%= image_tag (@listing.avatars[0].large.url) %>
   ```
-#upload to amazon aws
+#Upload to amazon aws 
+```reference link: https://dominicbreuker.com/posts/2016/01/17/carrierwave-guide.html```
 
 9) gemfile
 ```
@@ -89,23 +92,66 @@ gem 'fog'
 10)app/uploaders/avatar_uploader.rb
 ```
 storage :fog
+#storage :file
 ```
 
-11)
-config/initializers/s3.rb
+11) create AWS account
+```
+- Under AWS account:
+ a) create user under AWS account (for eg.: "ABC", generate security credential - :aws_access_key_id & :aws_secret_access_key)
+ b) create bucket (for eg. : "my_pairbnb"), bucket country i set to singapore
+ c) create policy. On the services/IAM users list, click on your user and go to the tab Permissions. There we can attach the policy we just created to the user "ABC".
+ d) On the services/IAM/policy, under policy document tab, I change my resource bucket name to "my_pairbnb" as below:
+```
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::my_pairbnb/*"
+    }
+  ]
+}
+
+```
+
+12) config/initializers/s3.rb
 ```
 CarrierWave.configure do |config|
   config.fog_credentials = {
       :provider               => 'AWS',
-      :aws_access_key_id      => ENV['S3_KEY'],
-      :aws_secret_access_key  => ENV['S3_SECRET_KEY'],
-      :region                 => 'ap-southeast-1' # Change this for different AWS region. Default is 'us-east-1'
+      :aws_access_key_id      => ENV['S3_KEY'],#security credentials of my created user "ABC" under my AWS account
+      :aws_secret_access_key  => ENV['S3_SECRET_KEY'], #security credentials of my created user "ABC" under my AWS account
+      :region                 => 'ap-southeast-1' #my bucket country, i set to singapore, so its ap-southeast-1
   }
-  config.fog_directory  = "ssy_pairbnb" #name_of_directory
+  config.fog_directory  = "my_pairbnb" #bucket name, for eg. : "my_pairbnb"
 end
 ```
 ```
-MUST REMEMBER: use gem figaro, store all key and secret key into application.yml and make sure its included in .gitignore
+MUST REMEMBER to use gem figaro, store all key and secret key into application.yml and make sure its included in .gitignore
 ```
+
+13) use FIGARO GEM
+
+```
+insert `gem 'figaro'` into gemfile
+```
+```
+$bundle install
+```
+```
+$bundle exec figaro install
+```
+
+- config/application.yml
+```
+S3_KEY: 'XXX'
+S3_SECRET_KEY: 'XXX'
+
+```
+
 
 
