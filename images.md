@@ -14,6 +14,9 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 gem 'mini_magick'
 ```
+```
+$bundle install
+```
 
 3) migration add avatar column to table listings
 ```
@@ -84,9 +87,12 @@ end
 #Upload to amazon aws 
 ```reference link: https://dominicbreuker.com/posts/2016/01/17/carrierwave-guide.html```
 
-9) gemfile
+9) install gem fog
 ```
 gem 'fog'
+```
+```
+$bundle install
 ```
 
 10)app/uploaders/avatar_uploader.rb
@@ -137,7 +143,7 @@ MUST REMEMBER to use gem figaro, store all key and secret key into application.y
 13) use FIGARO GEM
 
 ```
-insert `gem 'figaro'` into gemfile
+gem 'figaro'
 ```
 ```
 $bundle install
