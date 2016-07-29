@@ -2,7 +2,8 @@ http://apidock.com/rails/v4.0.2/ActiveModel/SecurePassword/ClassMethods/has_secu
 
 1) gemfile
 
-```gem 'bcrypt', '~>3.1.7'
+```
+gem 'bcrypt', '~>3.1.7'
 
 $bundle install
 
@@ -19,7 +20,7 @@ end
 ```
 def change
   ....
-  .....
+  ....
 
   t.string :password_digest
   ....
