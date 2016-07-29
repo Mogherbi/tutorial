@@ -2,21 +2,21 @@ http://apidock.com/rails/v4.0.2/ActiveModel/SecurePassword/ClassMethods/has_secu
 
 1) gemfile
 
-gem 'bcrypt', '~>3.1.7'
+```gem 'bcrypt', '~>3.1.7'
 
 $bundle install
-#install bcrypt gem
 
+```
 
 2) app/models/user.rb
-
+```
 class User < ActiveRecord::Base
   has_secure_password
 
 end
-
+```
 3) db/migrate/20160728000000_create_users.rb
-
+```
 def change
   ....
   .....
@@ -24,7 +24,7 @@ def change
   t.string :password_digest
   ....
 end
-
+```
 
 4) test using .authentication method
 #if return result
