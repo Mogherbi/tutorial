@@ -18,7 +18,11 @@ end
 3) db/migrate/20160728000000_create_users.rb
 
 def change
+  ....
+  .....
+
   t.string :password_digest
+  ....
 end
 
 
