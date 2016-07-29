@@ -15,7 +15,7 @@
 ```
 <= render 'form' %>
 ```
-#form has to be partial html erb file
+- form has to be partial html erb file
 
 
 - app/views/layout/application.html.erb
