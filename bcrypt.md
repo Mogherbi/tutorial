@@ -28,7 +28,7 @@ end
 
 4) test using .authentication method
 #if return result
-
+```
 user = User.new(name: 'david', password: '', password_confirmation: 'nomatch')
 user.save                                                       # => false, password required
 user.password = 'mUc3m00RsqyRe'
@@ -39,3 +39,4 @@ user.authenticate('notright')                                   # => false
 user.authenticate('mUc3m00RsqyRe')                              # => user
 User.find_by(name: 'david').try(:authenticate, 'notright')      # => false
 User.find_by(name: 'david').try(:authenticate, 'mUc3m00RsqyRe') # => user
+```
