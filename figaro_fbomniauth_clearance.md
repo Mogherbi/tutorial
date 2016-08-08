@@ -10,7 +10,12 @@ gem 'clearance'
 ```$bundle install```
 
 3)
-```$rails generate clearance:install```
+```
+$bundle exec rake db:create
+```
+```
+$rails generate clearance:install
+```
 
 4) app/views/layout/application.html.erb
 
