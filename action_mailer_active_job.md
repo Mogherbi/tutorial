@@ -86,7 +86,16 @@ reference_link: http://guides.rubyonrails.org/active_job_basics.html
 
 
 ```
-- Action Mailer is nicely integrated with Active Job so you can send emails outside of the request-response cycle, so the user doesn't have to wait on it. Active Job's default behavior is to execute jobs via the :async adapter. So, you can use deliver_later now to send emails asynchronously. Active Job's default adapter runs jobs with an in-process thread pool. It's well-suited for the development/test environments, since it doesn't require any external infrastructure, but it's a poor fit for production since it drops pending jobs on restart. If you need a persistent backend, you will need to use an Active Job adapter that has a persistent backend (Sidekiq, Resque, etc).
+- Action Mailer is nicely integrated with Active Job so you can send emails outside of the request-response cycle, 
+so the user doesn't have to wait on it. 
+
+Active Job's default behavior is to execute jobs via the :async adapter. 
+So, you can use deliver_later now to send emails asynchronously. 
+Active Job's default adapter runs jobs with an in-process thread pool. 
+It's well-suited for the development/test environments, since it doesn't require any external infrastructure, 
+but it's a poor fit for production since it drops pending jobs on restart. 
+If you need a persistent backend, 
+you will need to use an Active Job adapter that has a persistent backend (Sidekiq, Resque, etc).
 ```
 
 
