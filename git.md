@@ -5,29 +5,30 @@ $git checkout -b "feature/listings"
 $git add .
 $git commit -m "listing model done"
 ```
-- create remote branch, and push my code there
+
+B) check if there is any conflict with current remote master branch
 ```
+- checkout to my local master branch
+$git checkout master 
+
+- pull the latest code from remote master branch
+$git pull origin master
+
+- checkout to my local branch feature/listings
+$git checkout feature/listings
+
+- merge it with my local master branch code
+$git merge master
+
+- solve any conflicts if there are any
+
+- create remote(github in this case) branch, and push my code there
+
 $git push origin feature/listings
 ```
 
-
-
-B) check your teammate branch, by pulling it from remote branch(github)
-
-```
-$git checkout master
-$git status
-- will show that u r on master
-- rmbr: you dont pull the branch to replace ur local master branch
-```
-
-```$git checkout -b "check check"```
-- for eg.:
-```
-$git pull origin feature/users
-```
-
-C) update your local master branch with UPDATED remote master branch
-```$git checkout master```
-```%git pull origin master ```
-
+C) go to github.com , create a pull request, 
+  inform the master of repository to perform merging if it has no more conflicts.
+  
+D) DONE, you are now reading to code on another branch if you want to.
+   Or further updating the branch feature/listings 
