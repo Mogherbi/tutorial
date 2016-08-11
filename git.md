@@ -6,7 +6,7 @@ $git add .
 $git commit -m "listing model done"
 ```
 
-- check if there is any conflict with current remote branch
+B) check if there is any conflict with current remote master branch
 ```
 - checkout to my local master branch
 $git checkout master 
@@ -27,4 +27,8 @@ $git merge master
 $git push origin feature/listings
 ```
 
-- go to github.com , create a pull request, inform the master of repository to perform merging if it has no more conflicts.
+C) go to github.com , create a pull request, 
+  inform the master of repository to perform merging if it has no more conflicts.
+  
+D) DONE, you are now reading to code on another branch if you want to.
+   Or further updating the branch feature/listings 
