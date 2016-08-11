@@ -74,9 +74,10 @@ end
 ```
 1. In the terminal, run 'elasticsearch'
 2. In a separate tab in the terminal, run 'rake searchkick:reindex CLASS=Listing'
+```
 *read more on reference link on top to learn when to reindex and when not to:
-```
 `https://github.com/ankane/searchkick`
+
 ```
-3. run 'bundle exec rails s'
+3. In a separate tab in the terminal, run 'bundle exec rails s'
 ```
