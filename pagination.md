@@ -1,18 +1,20 @@
 reference_link:
-```http://rails-4-0.railstutorial.org/book/updating_and_deleting_users
-```http://www.w3schools.com/bootstrap/bootstrap_pagination.asp```
+```
+http://rails-4-0.railstutorial.org/book/updating_and_deleting_users
+http://www.w3schools.com/bootstrap/bootstrap_pagination.asp
+```
 
 
 
 1) Gemfile
 
 ```
-
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+```
 
+```
 $bundle install
-
 ```
 
 2) app/controllers/listings_controller.rb
