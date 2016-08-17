@@ -179,8 +179,27 @@ class ReservationJob < ActiveJob::Base
 end
 
 ```
+4) call the job in reservations_controller.rb
 
-4) How to run it on terminal (on 3 different terminal tabs)
+
+```
+def create
+  ....
+  .....
+  ........
+  @host = "abc@gmail.com"
+  if @reservation.save
+    # ReservationMailer.notification_email(current_user.email, @host, @reservation.listing.id, @reservation.id).deliver_later
+    ReservationJob.perform_later(current_user.email, @host, @reservation.listing.id, @reservation.id)
+    # call out reservation job to perform the mail sending task after @reservation is successfully saved
+  end
+end
+```
+
+
+
+
+5) How to run it on terminal (on 3 different terminal tabs)
 ```
 $bundle exec rails s
 ```
