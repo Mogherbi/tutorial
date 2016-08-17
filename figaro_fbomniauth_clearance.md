@@ -1,3 +1,10 @@
+reference_links:
+```
+1) https://github.com/thoughtbot/clearance
+2) https://github.com/NextAcademy/how_to_integrate_clearance_wtih_facebook
+3) https://gist.github.com/stevebourne/2394427
+```
+
 1) gemfile
 ```
 #user authentication
@@ -145,7 +152,6 @@ root 'welcome#index'
 #*** rails g clearance:routes show all these default Clearance routes
 resources :passwords, controller: "clearance/passwords", only: [:create, :new]
 resource :session, controller: "clearance/sessions", only: [:create]
-resources :users, controller: "users", only: :show
 resources :users, controller: "clearance/users", only: [:create] do
   resource :password,
     controller: "clearance/passwords",
@@ -157,6 +163,7 @@ delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
 get "/sign_up" => "clearance/users#new", as: "sign_up"
 #*** end of default routes of Clearance
 
+resources :users, controller: "users", only: :show
 get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 ```
 
