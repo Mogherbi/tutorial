@@ -205,11 +205,16 @@ $bundle exec rails s
 ```
 
 ```
-$bundle exec sidekiq
+$bundle exec sidekiq 
 ```
 
 ```
+for OSX:
 $bundle exec redis-server
+
+for VM:
+$sudo apt-get install redis-server
+$service redis-server restart
 ```
 
 
