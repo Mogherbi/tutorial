@@ -31,6 +31,11 @@ class ReservationMailer < ApplicationMailer
 end
 
 ```
+```
+**You need to make sure your default email setting has allowed access for less secured apps.
+For example, if you are using gmail, change the setting here:
+https://www.google.com/settings/security/lesssecureapps***
+```
 
 2) create respective mailer view template
 
