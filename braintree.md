@@ -119,7 +119,7 @@ end
 
 5) Create New Payment Page
 
-app/views/payment/new.html.erb
+app/views/payments/new.html.erb
 
 ```
 <h2>Payment Page</h2>
