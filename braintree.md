@@ -16,7 +16,7 @@ A) Sign up braintree sandbox account
 
 B) Insert ID and keys into app
 
-config/braintree.rb
+config/initializers/braintree.rb
 
 ```
 Braintree::Configuration.environment = :sandbox
