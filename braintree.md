@@ -118,6 +118,8 @@ end
 ```
 
 5) Create New Payment Page
+
+
 app/views/reservations/show.html.erb
 ```
 <h3>Your Reservation</h3>
