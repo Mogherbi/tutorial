@@ -118,6 +118,33 @@ end
 ```
 
 5) Create New Payment Page
+app/views/reservations/show.html.erb
+```
+<h3>Your Reservation</h3>
+
+<ul class="list-group">
+  <li class="list-group-item">
+    <p>Listing name: <%= link_to @reservation.listing.name, listing_path(@reservation.listing) %></p>
+    <p>No. of Guest: <%= @reservation.no_of_guests%> </p>
+    <p>Location: <%= @reservation.listing.location %> </p>
+    <p>Check-in Date: <%= @reservation.start_date %></p>
+
+    <p>Checkout Date: <%= @reservation.end_date %></p>
+
+    <strong>Payment Status:</strong>
+      <% if @reservation.payments.where(status: :authorized).count == 0%>
+      <span class="btn btn-danger"> NOT PAID </span>
+
+       <%= link_to 'Pay Now' , new_payment_path + "?id=" + reservation.id.to_s, class: "btn btn-warning"  %>
+      <% else %>
+      <span class="btn btn-success">PAID</span>
+      <% end %>
+  </li>
+</ul>
+
+```
+
+
 
 app/views/payments/new.html.erb
 
