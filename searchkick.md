@@ -12,6 +12,15 @@ If you use VM, use:
 $sudo apt-get install elasticsearch
 ```
 
+If you face no java installed issue on starting elasticsearch on Ubunthu 16.04, to install java:
+https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
+```
+$sudo apt-get install default-jre
+```
+followed by the steps here:
+https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html
+
+
 2) Gemfile
 
 ```
