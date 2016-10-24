@@ -1,9 +1,14 @@
 reference_link: https://github.com/ankane/searchkick
 
 
-1) Install Elasticsearch. For Homebrew, use:
+1) Install Elasticsearch. 
+If you have Homebrew installed, use:
 
-```$brew install elasticsearch```
+```
+$brew install elasticsearch
+```
+If you use VM, use:
+$sudo apt-get install elasticsearch
 
 
 2) Gemfile
@@ -72,8 +77,12 @@ end
 
 7) How to run elasticsearch on terminal
 ```
-1. In the terminal, run '$ elasticsearch'
-2. In a separate tab in the terminal, run '$ bundle exec rake searchkick:reindex CLASS=Listing'
+1. In the terminal, 
+- for Mac: run '$ elasticsearch'
+- for VM: run '$ sudo service elasticsearch start'
+
+2. In a separate tab in the terminal, 
+- run '$ bundle exec rake searchkick:reindex CLASS=Listing'
 ```
 *read more on reference link on top to learn when to reindex and when not to:
 
