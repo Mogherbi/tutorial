@@ -8,8 +8,9 @@ If you have Homebrew installed, use:
 $brew install elasticsearch
 ```
 If you use VM, use:
+```
 $sudo apt-get install elasticsearch
-
+```
 
 2) Gemfile
 
