@@ -80,7 +80,9 @@ end
 ```
 1. In the terminal, 
 - for Mac: run '$ elasticsearch'
-- for VM: run '$ sudo service elasticsearch start'
+- for VM: 
+a)run '$ sudo service elasticsearch start'
+b)run '$ sudo service elasticsearch status' (to make sure its working)
 
 2. In a separate tab in the terminal, 
 - run '$ bundle exec rake searchkick:reindex CLASS=Listing'
