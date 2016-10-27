@@ -5,8 +5,13 @@ http://www.w3schools.com/bootstrap/bootstrap_pagination.asp
 ```
 
 
+1a) insert maxcdn bootstrap library link under <head> tag
+- app/views/layout/application.html.erb
+```
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+```
 
-1) Gemfile
+1b) Gemfile
 
 ```
 gem 'will_paginate',           '3.1.0'
