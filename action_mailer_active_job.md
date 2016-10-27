@@ -102,6 +102,7 @@ end
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'abc@gmail.com'}
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 #mailer setting ends
 
 ```
@@ -221,6 +222,40 @@ for VM:
 $sudo apt-get install redis-server
 $service redis-server restart
 ```
+
+6) to deploy:
+config/environment/production.rb
+```
+#mailer setting starts
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:                'smtp.gmail.com',
+    port:                   25,
+    user_name:              ENV["GMAIL_USERNAME"],
+    password:               ENV["GMAIL_PASSWORD"],
+    authentication:         'plain',
+    enable_starttls_auto:   true
+
+  }
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'abc@gmail.com'}
+  config.action_mailer.default_url_options = { :host => "https://xxxxx.herokuapp.com/" }
+#mailer setting ends
+
+```
+
+Procfile (I use unicorn instead of puma)
+```
+web: bundle exec rails server -p $PORT
+web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb
+redis: redis-server
+sidekiq: bundle exec sidekiq -e production -c 5
+```
+
+
+
 
 
 
