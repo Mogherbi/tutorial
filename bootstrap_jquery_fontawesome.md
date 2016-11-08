@@ -1,7 +1,9 @@
 1) gemfile
+```
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'
 gem 'bootstrap-select-rails'
+```
 
 
 2) app/views/layout/application.html.erb
