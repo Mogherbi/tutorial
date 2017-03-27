@@ -47,17 +47,22 @@ end
 
 ```
 root 'welcome#index'
-get '/search', to: 'listings#search'
+get '/search', to: 'listings#search', as: 'search'
 ```
 
 
 
 5) I parked the search bar on my root page (for eg. app/views/welcome/index)
 ```
-  <%= form_for Listing.new, method: :get, url: search_path, class: "navbar-form navbar-left" do |f| %>
-    <%= text_field_tag :term, params[:term], placeholder:"Where do you wanna go?" %>
-    <%= f.submit 'search', class: 'btn btn-primary' %>
+<!-- beginning of search form -->
+<div class="search">
+  <%= form_tag search_path, method: "get", class: "navbar-form navbar-left" do |f| %>
+    <%= text_field_tag :term, params[:term],placeholder:"Where do you wanna go?" %>
+    <%= submit_tag 'search', class: 'btn btn-primary' %>
+    <!-- end of search form -->
   <% end %>
+  <!-- end of search div -->
+</div>
 ```
 
 6) app/controllers/listings_controller.rb
