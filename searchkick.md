@@ -32,7 +32,7 @@ $bundle install
 
 3) Add searchkick to models you want to search.
 In my case, I want to search on `listing model`
-```
+```ruby
 class Listing < ActiveRecord::Base
   ...
 
@@ -45,7 +45,7 @@ end
 
 4) Setting the routes in `config/routes.rb`
 
-```
+```ruby
 root 'welcome#index'
 get '/search', to: 'listings#search', as: 'search'
 ```
@@ -53,7 +53,7 @@ get '/search', to: 'listings#search', as: 'search'
 
 
 5) I parked the search bar on my root page (for eg. app/views/welcome/index)
-```
+```ruby
 <!-- beginning of search form -->
 <div class="search">
   <%= form_tag search_path, method: "get", class: "navbar-form navbar-left" do |f| %>
@@ -66,7 +66,7 @@ get '/search', to: 'listings#search', as: 'search'
 ```
 
 6) app/controllers/listings_controller.rb
-```
+```ruby
 class ListingsController < ApplicationController
   ...
   ...
