@@ -37,7 +37,7 @@ C) insert braintree js source
 
 app/views/layout/application.html.erb
 
-```
+```ruby
 <head>
   <title>ssy pairbnb</title>
 ...
@@ -51,7 +51,7 @@ app/views/layout/application.html.erb
 3) Payment Model, Migration
 
 app/models/payment.rb
-```
+```ruby
 class Payment < ActiveRecord::Base
   belongs_to :reservation
 end
@@ -60,7 +60,7 @@ end
 
 db/migrate/2016xxxxxxxxxx_create_payments.rb
 
-```
+```ruby
 class CreatePayments < ActiveRecord::Migration
   def change
     create_table :payments do |t|
@@ -77,7 +77,7 @@ end
 
 4) Controller & Routes
 
-```
+```ruby
 class PaymentsController < ApplicationController
 
   before_action :require_login
@@ -121,7 +121,7 @@ end
 
 
 app/views/reservations/show.html.erb
-```
+```ruby
 <h3>Your Reservation</h3>
 
 <ul class="list-group">
@@ -150,7 +150,7 @@ app/views/reservations/show.html.erb
 
 app/views/payments/new.html.erb
 
-```
+```ruby
 <h2>Payment Page</h2>
 
 <%= form_for(@payment) do |f| %>
