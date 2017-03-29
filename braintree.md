@@ -150,7 +150,7 @@ app/views/reservations/show.html.erb
 
 app/views/payments/new.html.erb
 
-```ruby
+```html
 <h2>Payment Page</h2>
 
 <%= form_for(@payment) do |f| %>
