@@ -8,14 +8,14 @@ $rails g mailer ReservationMailer
 ```
 
 i) app/mailers/application_mailer.rb
-```
+```ruby
 class ApplicationMailer < ActionMailer::Base
   default from: "abc@gmail.com"
   layout 'mailer'
 end
 ```
 ii) app/mailers/reservation_mailer.rb
-```
+```ruby
 class ReservationMailer < ApplicationMailer
 
   default from: 'abc@gmail.com'
@@ -41,7 +41,7 @@ https://www.google.com/settings/security/lesssecureapps***
 
 app/views/reservation_mailer/notification_email.html.erb
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -69,7 +69,7 @@ You can see details of the listing of your reservation here: <%= @listing.name %
 app/controllers/reservations_controller.rb
 
 
-```
+```ruby
 def create
   ....
   .....
@@ -83,7 +83,7 @@ end
 ```
 
 5) setup on config/environment/development.rb
-```
+```ruby
 ....
 ....
 #mailer setting starts
@@ -175,7 +175,7 @@ $rails g job reservation_job
 ```
  app/jobs/reservation_job.rb
 
-```
+```ruby
 class ReservationJob < ActiveJob::Base
   queue_as :default
 
@@ -188,7 +188,7 @@ end
 4) call the job in reservations_controller.rb
 
 
-```
+```ruby
 def create
   ....
   .....
@@ -225,7 +225,7 @@ $service redis-server restart
 
 6) to deploy:
 config/environment/production.rb
-```
+```ruby
 #mailer setting starts
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
