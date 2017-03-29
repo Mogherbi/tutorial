@@ -10,14 +10,14 @@ $bundle install
 ```
 
 2) app/models/user.rb
-```
+```ruby
 class User < ActiveRecord::Base
   has_secure_password
 
 end
 ```
 3) db/migrate/20160728000000_create_users.rb
-```
+```ruby
 def change
   ....
   ....
