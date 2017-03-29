@@ -26,7 +26,7 @@ $rails generate clearance:install
 
 4) app/views/layout/application.html.erb
 
-```
+```ruby
 <% if signed_in? %>
   Signed in as: <%= current_user.email %>
   <%= button_to 'Sign out', sign_out_path, method: :delete %>
@@ -45,13 +45,13 @@ $rails generate clearance:install
 
 5) config/environments/{development,test}.rb
 
-```
+```ruby
 config.action_mailer.default_url_options = { host: 'localhost:3000' }
 ```
 
 6) config/initializers/clearance.rb
 
- ```
+ ```ruby
 Clearance.configure do |config|
   config.routes = false
   config.allow_sign_up = true
@@ -76,14 +76,16 @@ end
  $touch config/initializers/omniauth.rb
  ```
 config/initializers/omniauth.rb
- ```
+ ```ruby
  Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook, ENV['facebook_key'], ENV['facebook_key_secret']
 end
 ```
 
-app/views/layout/application.erb
-```<%= link_to "Connect With Facebook", "/auth/facebook" %>```
+app/views/layout/application.html.erb
+```html
+<%= link_to "Connect With Facebook", "/auth/facebook" %>
+```
 
 8) Use gem `figaro` to store confidential stuff
 
@@ -105,7 +107,7 @@ facebook_key_secret: 'XXXX'
 $rails g model authentication uid:string provider:string token:string user_id:integer
 ```
 app/models/authentication.rb
-```
+```ruby
 class Authentication < ActiveRecord::Base
 
   belongs_to :user
@@ -145,7 +147,7 @@ $rails g controller welcome index
 $rails g clearance:routes
 ```
 config/routes.rb
-```
+```ruby
 
 root 'welcome#index'
 
@@ -173,7 +175,7 @@ get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 $touch app/controllers/sessions_controller.rb
 ```
 
-```
+```ruby
 class SessionsController < Clearance::SessionsController
 
   def create_from_omniauth
@@ -198,7 +200,7 @@ end
 ```
 
 14) app/models/user.rb
-```
+```ruby
 class User < ActiveRecord::Base
   include Clearance::User
 
