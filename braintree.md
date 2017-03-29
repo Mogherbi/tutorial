@@ -121,7 +121,7 @@ end
 
 
 app/views/reservations/show.html.erb
-```ruby
+```html
 <h3>Your Reservation</h3>
 
 <ul class="list-group">
