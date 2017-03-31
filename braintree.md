@@ -1,5 +1,5 @@
 
-reference_link: https://github.com/hollowaykeanho/learning/tree/master/rails/gems/braintree
+reference_link: https://developers.braintreepayments.com/reference/general/testing/ruby
 
 1) gemfile
 
