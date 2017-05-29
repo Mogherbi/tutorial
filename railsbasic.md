@@ -1,4 +1,4 @@
-- to create model & migration at the same time
+- To create model & migration at the same time
 
 ```$rails g model listing name:string price:integer ...```
 
