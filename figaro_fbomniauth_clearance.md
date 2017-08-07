@@ -113,12 +113,12 @@ class Authentication < ActiveRecord::Base
   belongs_to :user
 
   def self.create_with_omniauth(auth_hash)
-    create! do |auth|
-      auth.provider = auth_hash["provider"]
-      auth.uid = auth_hash["uid"]
-      auth.token = auth_hash["credentials"]["token"]
-    end
-  end
+     self.new(
+       provider: auth_hash["provider"],
+       uid: auth_hash["uid"],
+       token: auth_hash["credentials"]["token"]
+     )
+   end
 
   def update_token(auth_hash)
     self.token = auth_hash["credentials"]["token"]
@@ -207,15 +207,13 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   has_many :authentications, :dependent => :destroy
 
-  def self.create_with_auth_and_hash(authentication,auth_hash)
-    create! do |u|
-      #u.first_name = auth_hash["info"]["first_name"]
-      # u.last_name = auth_hash["info"]["last_name"]
-      # u.friendly_name = auth_hash["info"]["name"]
-      u.email = auth_hash["extra"]["raw_info"]["email"]
-      u.password = SecureRandom.hex(6)
-      u.authentications<<(authentication)
-    end
+  def self.create_with_auth_and_hash(authentication, auth_hash)
+    user = self.create!(
+      name: auth_hash["name"],
+      email: auth_hash["extra"]["raw_info"]["email"]
+    )
+    user.authentications << authentication
+    return user
   end
 
   def fb_token
